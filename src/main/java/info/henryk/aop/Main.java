@@ -12,6 +12,8 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
 
         SomeBean someBean = context.getBean("someBean", SomeBean.class);
-        someBean.SomeMethod();
+        someBean.method1();
+        someBean.method2();
+
     }
 }

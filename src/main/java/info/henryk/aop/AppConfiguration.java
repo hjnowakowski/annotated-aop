@@ -9,7 +9,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 @Configuration
 @ComponentScan("info.henryk.aop")
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true) //when we implement method
 public class AppConfiguration {
 
 }

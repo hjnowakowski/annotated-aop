@@ -29,27 +29,32 @@ public class LoggingAspect {
         logger.info("Executing method " + joinPoint.getSignature().getName());
     }
 
-    @After("execution(* *(..))") // ("allMethods()") can be used here //(("execution(* *(..))")) = (value = ("execution(* *(..))"))
-    public void logAfter(JoinPoint joinPoint){
-        logger.info("After method " + joinPoint.getSignature().getName());
-    }
 
-    @AfterReturning(pointcut = "allMethods()", returning = "returnedValue")
-    public void logAfterReturning(Object returnedValue){
-        logger.info("Returned value: " + returnedValue);
-    }
 
-    @AfterThrowing(pointcut = "allMethods()", throwing = "exeption")
-    public void logAfterThrowing(JoinPoint joinPoint, Throwable exeption){
-        logger.info("Method " + joinPoint.getSignature().getName() + "has thrown" + exeption);
-    }
 
-    public void logExecutionTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        long start = System.currentTimeMillis();
 
-        proceedingJoinPoint.proceed();
 
-        long end = System.currentTimeMillis();
-        logger.info("Execution time: " + (end - start) + " ms");
-    }
+//    @After("execution(* *(..))") // ("allMethods()") can be used here //(("execution(* *(..))")) = (value = ("execution(* *(..))"))
+//    public void logAfter(JoinPoint joinPoint){
+//        logger.info("After method " + joinPoint.getSignature().getName());
+//    }
+//
+//    @AfterReturning(pointcut = "allMethods()", returning = "returnedValue")
+//    public void logAfterReturning(Object returnedValue){
+//        logger.info("Returned value: " + returnedValue);
+//    }
+//
+//    @AfterThrowing(pointcut = "allMethods()", throwing = "exeption")
+//    public void logAfterThrowing(JoinPoint joinPoint, Throwable exeption){
+//        logger.info("Method " + joinPoint.getSignature().getName() + "has thrown" + exeption);
+//    }
+//
+//    public void logExecutionTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+//        long start = System.currentTimeMillis();
+//
+//        proceedingJoinPoint.proceed();
+//
+//        long end = System.currentTimeMillis();
+//        logger.info("Execution time: " + (end - start) + " ms");
+//    }
 }

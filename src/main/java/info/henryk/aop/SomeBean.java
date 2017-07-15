@@ -7,8 +7,12 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class SomeBean { //creates SomeBean bean by deafoult
-    public String SomeMethod(){
-        return "Some value";
+public class SomeBean implements SomeBeanInterface { //creates SomeBean bean by deafoult class name
+    public void method1(){
+        this.method2();
+
+    }
+    public void method2(){
+
     }
 }
